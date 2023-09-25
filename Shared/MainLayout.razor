@@ -1,9 +1,24 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+@{
+    var isLoginRoute = NavigationManager.Uri.Contains("/", StringComparison.OrdinalIgnoreCase);
+    var isRegisterRoute = NavigationManager.Uri.Contains("/register", StringComparison.OrdinalIgnoreCase);
+    var isProfileRoute = NavigationManager.Uri.Contains("/profile", StringComparison.OrdinalIgnoreCase);
+}
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    @if (!isLoginRoute && !isRegisterRoute && !isProfileRoute)
+    {
+        <div class="sidebar">
+            <!-- Tampilkan menu atau NavMenu Anda di sini -->
+            <ul>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <!-- Tambahkan item menu lainnya sesuai kebutuhan -->
+            </ul>
+        </div>
+    }
 
     <main>
         <div class="top-row px-4">

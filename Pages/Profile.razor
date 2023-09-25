@@ -1,0 +1,48 @@
+@page "/profile"
+<style>
+    /* CSS untuk mempercantik tampilan halaman profil */
+    .profile-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+    }
+
+    .profile-container h1 {
+        text-align: center;
+    }
+
+    .profile-info {
+        margin-top: 20px;
+    }
+
+    .profile-info p {
+        margin: 5px 0;
+    }
+
+    .profile-info strong {
+        font-weight: bold;
+    }
+</style>
+
+<PageTitle>Profile</PageTitle>
+
+<h1>Profile</h1>
+
+<div class="profile-container">
+    <div class="profile-info">
+        <p><strong>Nama Pengguna:</strong> @username</p>
+        <p><strong>Nama:</strong> @name</p>
+        <p><strong>Alamat:</strong> @address</p>
+        <p><strong>Nomor Telepon:</strong> @phone</p>
+    </div>
+</div>
+
+@code {
+    private string username = "jeevallucasgautama";
+    private string name = "Putu Jeevallucas Jnanamaitriya Surya Gautama";
+    private string address = "Jl. ABC No. 123";
+    private string phone = "081234567890";
+}
