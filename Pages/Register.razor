@@ -1,4 +1,7 @@
 @page "/register"
+@using Model
+@using System.ComponentModel.DataAnnotations
+
 <style>
     /* CSS untuk mempercantik tampilan form */
     .form {
@@ -30,6 +33,13 @@
         border-radius: 5px;
     }
 
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
     .btn-primary {
         background-color: #007bff;
         color: #fff;
@@ -54,44 +64,71 @@
     <p>Sudah memiliki akun? <a href="/">Login</a></p>
 </div>
 
-<form class="form" @onsubmit="RegisterUser">
-    <div class="form-group">
-        <label for="username">Nama Pengguna:</label>
-        <input id="username" type="text" @bind="username" />
-    </div>
+<EditForm Model="@registerModel" OnValidSubmit="RegisterUser">
+    <DataAnnotationsValidator />
+    <div class="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" @bind="@registerModel.Username" />
+            <ValidationMessage For="@(() => registerModel.Username)" />
+        </div>
 
-    <div class="form-group">
-        <label for="password">Kata Sandi:</label>
-        <input id="password" type="password" @bind="password" />
-    </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" @bind="@registerModel.Password" />
+            <ValidationMessage For="@(() => registerModel.Password)" />
+        </div>
 
-    <div class="form-group">
-        <label for="name">Nama:</label>
-        <input id="name" type="text" @bind="name" />
-    </div>
+        <div class="form-group">
+            <label for="name">Nama</label>
+            <input id="name" type="text" @bind="@registerModel.Name" />
+            <ValidationMessage For="@(() => registerModel.Name)" />
+        </div>
 
-    <div class="form-group">
-        <label for="address">Alamat:</label>
-        <input id="address" type="text" @bind="address" />
-    </div>
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <input id="address" type="text" @bind="@registerModel.Address" />
+            <ValidationMessage For="@(() => registerModel.Address)" />
+        </div>
 
-    <div class="form-group">
-        <label for="phone">Nomor Telepon:</label>
-        <input id="phone" type="text" @bind="phone" />
-    </div>
+        <div class="form-group">
+            <label for="phone">Nomor Telepon</label>
+            <input id="phone" type="text" @bind="@registerModel.Phone" />
+            <ValidationMessage For="@(() => registerModel.Phone)" />
+        </div>
 
-    <button class="btn btn-primary" type="submit">Register</button>
-</form>
+        <div class="form-group">
+            <label for="role">Pilih Peran</label>
+            <select id="role" @bind="@registerModel.Role">
+                <option value="Pengguna Rumah">Pengguna Rumah</option>
+                <option value="Pengambil Sampah">Pengambil Sampah</option>
+                <option value="Bank Sampah">Bank Sampah</option>
+            </select>
+            <ValidationMessage For="@(() => registerModel.Role)" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Register</button>
+    </div>
+</EditForm>
 
 @code {
-    private string username;
-    private string password;
-    private string name;
-    private string address;
-    private string phone;
+    private Model.RegisterModel registerModel = new RegisterModel
+        {
+            Username = "",
+            Name = "",
+            Address = "",
+            Phone = "",
+            Role = ""
+        };
 
     private void RegisterUser()
     {
-        // logika registrasi
+        // Logika registrasi
+        Console.WriteLine("Registration successful!");
+        Console.WriteLine($"Username: {registerModel.Username}");
+        Console.WriteLine($"Name: {registerModel.Name}");
+        Console.WriteLine($"Address: {registerModel.Address}");
+        Console.WriteLine($"Phone: {registerModel.Phone}");
+        Console.WriteLine($"Role: {registerModel.Role}");
     }
 }
