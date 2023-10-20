@@ -1,7 +1,6 @@
 @page "/"
 @using Model
 @using System.ComponentModel.DataAnnotations
-@inherits Register
 
 <style>
     /* CSS untuk mempercantik tampilan form login */
@@ -42,7 +41,7 @@
         cursor: pointer;
     }
 
-    /* CSS untuk tautan Register */
+    /* CSS untuk tautan Daftar */
     .register-link {
         text-align: center;
         margin-top: 10px;
@@ -54,23 +53,19 @@
 <h1>Login</h1>
 
 <div class="register-link">
-    <p>Belum punya akun? <a href="/register">Register</a></p>
+    <p>Belum punya akun? <a href="/register">Daftar</a></p>
 </div>
 
 <EditForm Model="@loginModel" OnValidSubmit="LoginUser">
     <DataAnnotationsValidator />
     <div class="form">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" type="text" @bind-value="loginModel.Username" />
-            <ValidationMessage For="@(() => loginModel.Username)" />
-        </div>
+        <label for="username">Username</label>
+        <input id="username" type="text" @bind-value="loginModel.Username" />
+        <ValidationMessage For="@(() => loginModel.Username)" />
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" @bind-value="loginModel.Password" />
-            <ValidationMessage For="@(() => loginModel.Password)" />
-        </div>
+        <label for="password">Password</label>
+        <input id="password" type="password" @bind-value="loginModel.Password" />
+        <ValidationMessage For="@(() => loginModel.Password)" />
 
         <button class="btn btn-primary" type="submit">Login</button>
     </div>
@@ -86,7 +81,7 @@
     private void LoginUser()
     {
         // Logika login
-        if (loginModel.Username == "jeevallucas" && loginModel.Password == "123")
+        if (loginModel.Username == "username" && loginModel.Password == "password")
         {
             Console.WriteLine("Login berhasil!");
         }
