@@ -5,10 +5,11 @@
     var isLoginRoute = NavigationManager.Uri.Contains("/", StringComparison.OrdinalIgnoreCase);
     var isRegisterRoute = NavigationManager.Uri.Contains("/register", StringComparison.OrdinalIgnoreCase);
     var isProfileRoute = NavigationManager.Uri.Contains("/profile", StringComparison.OrdinalIgnoreCase);
+    var isBankSampahRoute = NavigationManager.Uri.Contains("/banksampah", StringComparison.OrdinalIgnoreCase);
 }
 
 <div class="page">
-    @if (!isLoginRoute && !isRegisterRoute && !isProfileRoute)
+    @if (!isLoginRoute && !isRegisterRoute && !isProfileRoute && isBankSampahRoute)
     {
         <div class="sidebar">
             <!-- Tampilkan menu atau NavMenu Anda di sini -->
