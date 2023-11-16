@@ -1,6 +1,9 @@
 @page "/register"
 @using Model
+@using System.Net.Http
+@using System.Net.Http.Json
 @using System.ComponentModel.DataAnnotations
+@inject HttpClient Http
 
 <style>
     /* CSS untuk mempercantik tampilan form */
@@ -64,47 +67,47 @@
     <p>Sudah memiliki akun? <a href="/">Login</a></p>
 </div>
 
-<EditForm Model="@registerModel" OnValidSubmit="RegisterUser">
+<EditForm Model="@register" OnValidSubmit="AddRegis">
     <DataAnnotationsValidator />
     <div class="form">
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" type="text" @bind="@registerModel.Username" />
-            <ValidationMessage For="@(() => registerModel.Username)" />
+            <InputText id="username" type="text" @bind-Value="@register.username" />
+            <ValidationMessage For="@(() => register.username)" />
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" @bind="@registerModel.Password" />
-            <ValidationMessage For="@(() => registerModel.Password)" />
+            <label for="password_user_user">Password</label>
+            <InputText id="password_user_user" type="password_user" @bind-Value="@register.password_user" />
+            <ValidationMessage For="@(() => register.password_user)" />
         </div>
 
         <div class="form-group">
-            <label for="name">Nama</label>
-            <input id="name" type="text" @bind="@registerModel.Name" />
-            <ValidationMessage For="@(() => registerModel.Name)" />
+            <label for="nama_user">Nama</label>
+            <InputText id="nama_user" type="text" @bind-Value="@register.nama_user" />
+            <ValidationMessage For="@(() => register.nama_user)" />
         </div>
 
         <div class="form-group">
-            <label for="address">Alamat</label>
-            <input id="address" type="text" @bind="@registerModel.Address" />
-            <ValidationMessage For="@(() => registerModel.Address)" />
+            <label for="alamat_user">Alamat</label>
+            <InputText id="alamat_user" type="text" @bind-Value="@register.alamat_user" />
+            <ValidationMessage For="@(() => register.alamat_user)" />
         </div>
 
         <div class="form-group">
-            <label for="phone">Nomor Telepon</label>
-            <input id="phone" type="text" @bind="@registerModel.Phone" />
-            <ValidationMessage For="@(() => registerModel.Phone)" />
+            <label for="nomor_telepon_user">Nomor Telepon</label>
+            <InputText id="nomor_telepon_user" type="text" @bind-Value="@register.nomor_telepon_user" />
+            <ValidationMessage For="@(() => register.nomor_telepon_user)" />
         </div>
 
         <div class="form-group">
-            <label for="role">Pilih Peran</label>
-            <select id="role" @bind="@registerModel.Role">
+            <label for="peran_user">Pilih Peran</label>
+            <InputSelect id="peran_user" @bind-Value="@register.peran_user">
                 <option value="Pengguna Rumah">Pengguna Rumah</option>
                 <option value="Pengambil Sampah">Pengambil Sampah</option>
                 <option value="Bank Sampah">Bank Sampah</option>
-            </select>
-            <ValidationMessage For="@(() => registerModel.Role)" />
+            </InputSelect>
+            <ValidationMessage For="@(() => register.peran_user)" />
         </div>
 
         <button class="btn btn-primary" type="submit">Register</button>
@@ -112,23 +115,30 @@
 </EditForm>
 
 @code {
-    private Model.RegisterModel registerModel = new RegisterModel
-        {
-            Username = "",
-            Name = "",
-            Address = "",
-            Phone = "",
-            Role = ""
-        };
-
-    private void RegisterUser()
+    private Regis register = new();
+    public async Task AddRegis()
     {
-        // Logika registrasi
-        Console.WriteLine("Registration successful!");
-        Console.WriteLine($"Username: {registerModel.Username}");
-        Console.WriteLine($"Name: {registerModel.Name}");
-        Console.WriteLine($"Address: {registerModel.Address}");
-        Console.WriteLine($"Phone: {registerModel.Phone}");
-        Console.WriteLine($"Role: {registerModel.Role}");
+        await Http.PostAsJsonAsync("http://localhost/Slims3/public/api/fe/regis", register);
+    }
+
+    public class Regis
+    {
+        [Required(ErrorMessage = "*Username harus diisi")]
+        public string? username { get; set; }
+
+        [Required(ErrorMessage = "*Password harus diisi")]
+        public string? password_user { get; set; }
+
+        [Required(ErrorMessage = "*Nama harus diisi")]
+        public string? nama_user { get; set; }
+
+        [Required(ErrorMessage = "*Alamat harus diisi")]
+        public string? alamat_user { get; set; }
+
+        [Required(ErrorMessage = "*Nomor Telepon harus diisi")]
+        public string? nomor_telepon_user { get; set; }
+
+        [Required(ErrorMessage = "*Peran harus dipilih")]
+        public string? peran_user { get; set; }
     }
 }

@@ -9,57 +9,73 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = TodoList
 build_property.RootNamespace = TodoList
-build_property.ProjectDir = d:\Pemrograman Frontend\TodoList\
+build_property.ProjectDir = d:\Pemrograman-Frontend\TodoList\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = d:\Pemrograman Frontend\TodoList
+build_property.MSBuildProjectDirectory = d:\Pemrograman-Frontend\TodoList
 build_property._RazorSourceGeneratorDebug = 
 
-[d:/Pemrograman Frontend/TodoList/App.razor]
+[d:/Pemrograman-Frontend/TodoList/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Counter.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/ConsumeComponent1.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VtZUNvbXBvbmVudDEucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/Pemrograman-Frontend/TodoList/Pages/ConsumeComponent2.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VtZUNvbXBvbmVudDIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/Pemrograman-Frontend/TodoList/Pages/ConsumeComponent3.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3VtZUNvbXBvbmVudDMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/Pemrograman-Frontend/TodoList/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/FetchData.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Index.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Login.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/Jeep.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSmVlcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[d:/Pemrograman-Frontend/TodoList/Pages/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Profile.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/Profile.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Register.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Pages/Todo.razor]
+[d:/Pemrograman-Frontend/TodoList/Pages/Todo.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9kby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Shared/SurveyPrompt.razor]
+[d:/Pemrograman-Frontend/TodoList/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/_Imports.razor]
+[d:/Pemrograman-Frontend/TodoList/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[d:/Pemrograman Frontend/TodoList/Shared/MainLayout.razor]
+[d:/Pemrograman-Frontend/TodoList/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-lgk3a00odd
 
-[d:/Pemrograman Frontend/TodoList/Shared/NavMenu.razor]
+[d:/Pemrograman-Frontend/TodoList/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-8wslh49k3u
